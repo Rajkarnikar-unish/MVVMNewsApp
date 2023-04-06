@@ -1,11 +1,10 @@
-package com.androiddevs.mvvmnewsapp
+package com.androiddevs.mvvmnewsapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "articles",
-    primaryKeys =
 )
 data class Article(
     @PrimaryKey(autoGenerate = true)
