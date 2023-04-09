@@ -15,13 +15,13 @@ import com.androiddevs.mvvmnewsapp.ui.NewsActivity
 import com.androiddevs.mvvmnewsapp.ui.NewsViewModel
 import com.androiddevs.mvvmnewsapp.util.Resource
 
+private const val TAG = "BreakingNewsFragment"
 class BreakingNewsFragment: Fragment() {
 
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     private var _binding : FragmentBreakingNewsBinding? = null
     private val binding get() = _binding!!
-    val TAG = "Breaking News Fragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
