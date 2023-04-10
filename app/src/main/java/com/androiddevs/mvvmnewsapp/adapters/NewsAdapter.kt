@@ -1,5 +1,6 @@
 package com.androiddevs.mvvmnewsapp.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -20,12 +21,6 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
                 tvTitle.text = article.title
                 tvDescription.text = article.description
                 tvPublishedAt.text = article.publishedAt
-
-                setOnItemClickListener {
-                    onItemClickListener?.let {
-                        it(article)
-                    }
-                }
             }
         }
     }
@@ -55,6 +50,11 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = differ.currentList[position]
         holder.bind(article)
+        holder.itemView.apply {
+            setOnClickListener {
+                onItemClickListener?.let { it(article) }
+            }
+        }
     }
 
     private var onItemClickListener: ((Article) -> Unit)? = null
