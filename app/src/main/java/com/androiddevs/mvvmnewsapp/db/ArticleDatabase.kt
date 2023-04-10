@@ -1,16 +1,16 @@
 package com.androiddevs.mvvmnewsapp.db
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+import androidx.room.*
 import com.androiddevs.mvvmnewsapp.models.Article
 
 @Database(
     entities = [Article::class],
-    version = 1,
-//    exportSchema = true, optional
+    version = 4,
+    autoMigrations = [
+        AutoMigration(from = 3, to = 4)
+    ],
+    exportSchema = true,
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase: RoomDatabase() {
