@@ -6,11 +6,7 @@ import com.androiddevs.mvvmnewsapp.models.Article
 
 @Database(
     entities = [Article::class],
-    version = 4,
-    autoMigrations = [
-        AutoMigration(from = 3, to = 4)
-    ],
-    exportSchema = true,
+    version = 1,
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase: RoomDatabase() {
